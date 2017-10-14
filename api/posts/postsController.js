@@ -63,7 +63,7 @@ var createNewPost = function (bodyRequest) {
             'creationDate': new Date()
         }
         Constants.MOCK_POSTS.posts.push(post);
-        var data = { DATA: post, status: 200 }
+        var data = { DATA: post, status: 201 }
         return data;
     } else {
         var data = { DATA: Constants.MESSAGES.INVALID_PARAMS, status: 400 }
