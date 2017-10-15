@@ -18,11 +18,11 @@ let generateResponse = function (req, res) {
         }
         if (!found) {
             res.status(404);
-            res.json({ RESULT: Constants.MESSAGES.USER_NOT_FOUND });
+            res.json({ DATA : Constants.MESSAGES.USER_NOT_FOUND });
         }
     } else {
         res.status(400);
-        res.json({ RESULT: Constants.MESSAGES.INVALID_PARAMS });
+        res.json({ DATA : Constants.MESSAGES.INVALID_PARAMS });
     }
 };
 

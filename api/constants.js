@@ -1,14 +1,14 @@
 const MOCK_USERS = [
     {
-        'email': 'teste@email.com',
+        'email': 'test@email.com',
         'password': '123'
     },
     {
-        'email': 'teste2@email.com',
+        'email': 'test2@email.com',
         'password': '123'
     },
     {
-        'email': 'teste3@email.com',
+        'email': 'test3@email.com',
         'password': '123'
     }
 ];
@@ -44,10 +44,11 @@ const MESSAGES = {
     USER_NOT_AUTHENTICATED: 'Usuário não autenticado',
     INVALID_JWT: 'JWT inválido',
     POST_NOT_FOUND: 'Post não encontrado',
+    POST_ADDED: 'Post adicionado com sucesso',
     POST_DELETED: 'Post removido com sucesso',
     POST_UPDATED: 'Post atualizado com sucesso',
     INVALID_PATH: 'PATH inválido',
-    RUNNING_SERVER: 'Server is running on port 8080...'
+    RUNNING_SERVER: 'Server is running...'
 }
 
 module.exports = {

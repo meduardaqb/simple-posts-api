@@ -10,7 +10,7 @@ var verifyTokenJWT = function (headers) {
 
             jwt.verify(token, Constants.JWT_KEY, function (err, decoded) {
                 if (err) {
-                    var response = { ERROR: Constants.MESSAGES.INVALID_JWT }
+                    var response = { DATA: Constants.MESSAGES.INVALID_JWT }
                     reject(response);
                 } else {
                     let user = users.find(function (element) { if (element.email == decoded.email) { return true; } });
@@ -18,13 +18,13 @@ var verifyTokenJWT = function (headers) {
                     if (user) {
                         resolve()
                     } else {
-                        var response = { ERROR: Constants.MESSAGES.USER_NOT_FOUND }
+                        var response = { DATA: Constants.MESSAGES.USER_NOT_FOUND }
                         reject(response);
                     }
                 }
             });
         } else {
-            var response = { ERROR: Constants.MESSAGES.USER_NOT_AUTHENTICATED }
+            var response = { DATA: Constants.MESSAGES.USER_NOT_AUTHENTICATED }
             reject(response);
         }
     })
@@ -63,7 +63,7 @@ var createNewPost = function (bodyRequest) {
             'creationDate': new Date()
         }
         Constants.MOCK_POSTS.posts.push(post);
-        var data = { DATA: post, status: 201 }
+        var data = { DATA: Constants.MESSAGES.POST_ADDED, status: 201 }
         return data;
     } else {
         var data = { DATA: Constants.MESSAGES.INVALID_PARAMS, status: 400 }
